@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Home, BarChart, Settings, Trash2, LogOut, LogIn, Database } from "lucide-react";
+import { Home, BarChart, Settings, Trash2, LogOut, LogIn } from "lucide-react";
 
 const menuItems = [
   { name: "Dashboard", icon: Home, href: "/dashboard" },
