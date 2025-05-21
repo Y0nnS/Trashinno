@@ -1,5 +1,4 @@
 import Sidebar from "../../components/dashboard/sidebar";
-import Header from "../../components/dashboard/header";
 import React from "react";
 
 // app/dashboard/layout.tsx

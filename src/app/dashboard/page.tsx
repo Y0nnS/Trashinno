@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Home, BarChart, Settings, Database, LogIn, UserPlus, RefreshCcw } from 'lucide-react';
 import { useState } from 'react';
 

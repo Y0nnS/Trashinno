@@ -1,9 +1,5 @@
 'use client';
-
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Mail, Phone, ChevronRight, ChevronLeft } from "lucide-react";
+import React from 'react';
 
 export default function Kontak() {
   return (
