@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import Image from 'next/image'
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -15,6 +16,11 @@ export default function RegisterPage() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
+  type UnknownError = {
+    message?: string
+    [key: string]: unknown
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
@@ -23,7 +29,7 @@ export default function RegisterPage() {
       return
     }
     setLoading(true)
-  
+
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
@@ -35,47 +41,49 @@ export default function RegisterPage() {
         },
       })
       if (signUpError) throw signUpError
-  
+
       const user = data.user
       if (!user) throw new Error('Failed to get user after sign up.')
-  
-      const { data: insertData, error: insertError } = await supabase.from('accounts').insert([
-        {
-          id: user.id,
-          email: user.email,
-          full_name: fullName,
-          role: 'user',
-        },
-      ])      
-      
-        .select()
-  
+
+        const { error: insertError } = await supabase
+          .from('accounts')
+          .insert([
+            {
+              id: user.id,
+              email: user.email,
+              full_name: fullName,
+              role: 'user',
+            },
+          ])
+          .select()
+        
         if (insertError) {
           console.error('Insert error details:', insertError)
           throw new Error(
             'Account created, but failed to save profile: ' +
               (insertError.message || JSON.stringify(insertError))
           )
-        }        
-                
-      console.log('Insert success:', insertData)
-  
+        }
+
       router.push('/auth/login')
-    } catch (error: any) {
-      setError(error.message || JSON.stringify(error))
+    } catch (err: unknown) {
+      const e = err as UnknownError
+      setError(e.message ?? JSON.stringify(e))
     } finally {
       setLoading(false)
     }
-  }  
+  }
 
   return (
     <main className="relative min-h-screen flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
       {/* Background Image Blur */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/authIMG/login-bg.jpg"
           alt="Background"
           className="w-full h-full object-cover blur-sm scale-105"
+          fill
+          priority
         />
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
@@ -83,69 +91,88 @@ export default function RegisterPage() {
       {/* Register Card */}
       <div className="relative z-10 bg-white shadow-lg rounded-xl overflow-hidden grid md:grid-cols-2 w-full h-auto max-w-4xl">
         <div className="hidden md:flex items-center justify-center bg-gray-50">
-          <img
+          <Image
             src="/images/authIMG/register.jpg"
             alt="Illustration"
             className="w-full"
+            width={500}
+            height={500}
+            priority
           />
         </div>
-
         {/* Right Form */}
         <div className="p-8 w-full">
           <h2 className="text-2xl font-bold text-gray-800 mb-1">
             Register to <span className="text-green-600">Trashinno</span>
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             {error && (
-              <div className="p-2 text-red-600 border border-red-600 rounded">
+              <div className="p-2 text-red-600 border border-red-600 rounded" role="alert">
                 {error}
               </div>
             )}
 
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Full Name</label>
+              <label htmlFor="fullName" className="block text-sm font-medium text-gray-600 mb-1">
+                Full Name
+              </label>
               <input
+                id="fullName"
                 type="text"
                 placeholder="John Doe"
                 className="text-zinc-800 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
                 value={fullName}
-                onChange={e => setFullName(e.target.value)}
+                onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
+                Email
+              </label>
               <input
+                id="email"
                 type="email"
                 placeholder="you@example.com"
                 className="text-zinc-800 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
-                required/>
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Password</label>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-600 mb-1">
+                Password
+              </label>
               <input
+                id="password"
                 type={showPassword ? 'text' : 'password'}
                 placeholder="••••••••"
                 className="text-zinc-800 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
                 value={password}
-                onChange={e => setPassword(e.target.value)}
-                required/>
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={8}
+              />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
+                Confirm Password
+              </label>
               <input
+                id="confirmPassword"
                 type={showPassword ? 'text' : 'password'}
                 placeholder="••••••••"
                 className="text-zinc-800 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
                 value={confirmPassword}
-                onChange={e => setConfirmPassword(e.target.value)}
-                required/>
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                minLength={8}
+              />
             </div>
 
             <div className="flex items-center space-x-2">
@@ -154,7 +181,8 @@ export default function RegisterPage() {
                 type="checkbox"
                 checked={showPassword}
                 onChange={() => setShowPassword(!showPassword)}
-                className="h-4 w-4 text-green-600 border-gray-300 rounded"/>
+                className="h-4 w-4 text-green-600 border-gray-300 rounded"
+              />
               <label htmlFor="show-password" className="text-sm text-gray-600">
                 Show Password
               </label>
@@ -165,7 +193,8 @@ export default function RegisterPage() {
               disabled={loading}
               className={`w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition ${
                 loading ? 'opacity-50 cursor-not-allowed' : ''
-              }`}>
+              }`}
+            >
               {loading ? 'Registering...' : 'Register'}
             </button>
           </form>

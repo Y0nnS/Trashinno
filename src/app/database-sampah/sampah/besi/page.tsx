@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from 'next/image';
 
 export default function BesiPage() {
   return (
@@ -14,7 +15,7 @@ export default function BesiPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="relative w-full h-72 md:h-96">
-          <img
+          <Image
             src="/images/sampah/besi.png"
             alt="Sampah Besi dan Logam"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[50%_40%_50%_40%_/_40%_50%_40%_50%]"

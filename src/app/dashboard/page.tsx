@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Home, BarChart, Settings, Database, LogIn, UserPlus, RefreshCcw } from 'lucide-react';
 import { useState } from 'react';
 
@@ -31,19 +32,38 @@ export default function DashboardPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
+      {/* Sidebar */}
+      <nav className="w-60 bg-white p-6 shadow-md">
+        <h2 className="text-2xl font-bold mb-6">Menu</h2>
+        <ul>
+          {menuItems.map(({ name, icon: Icon, href }) => (
+            <li key={name} className="mb-4">
+              <Link href={href}>
+                <a className="flex items-center gap-3 text-gray-700 hover:text-green-600 transition">
+                  <Icon size={20} />
+                  {name}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       {/* Main Content */}
       <div className="flex flex-col flex-1">
         <header className="bg-white shadow px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl font-semibold text-gray-800">Welcome back!</h1>
           <div className="flex items-center space-x-4">
-          <button
-            onClick={fetchIotData}
-            disabled={loading}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
-              loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 text-white'}`}>
-            <RefreshCcw size={16} className={loading ? 'animate-spin' : ''} />
-            {loading ? 'Memuat...' : 'Ambil Data dari IoT'}
-          </button>
+            <button
+              onClick={fetchIotData}
+              disabled={loading}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
+                loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 text-white'
+              }`}
+            >
+              <RefreshCcw size={16} className={loading ? 'animate-spin' : ''} />
+              {loading ? 'Memuat...' : 'Ambil Data dari IoT'}
+            </button>
 
             <div className="w-9 h-9 bg-gray-200 rounded-full" />
             <span className="text-gray-700 text-sm">phion@example.com</span>
@@ -70,7 +90,7 @@ export default function DashboardPage() {
           <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="text-xl font-bold text-zinc-800 mb-4">Live IoT Data</h2>
             {!iotData ? (
-              <p className="text-gray-500">Klik tombol "Ambil Data dari IoT" untuk melihat data terbaru.</p>
+              <p className="text-gray-500">Klik tombol &quot;Ambil Data dari IoT&quot; untuk melihat data terbaru.</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(iotData).map(([key, value]) => (

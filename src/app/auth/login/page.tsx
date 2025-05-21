@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import Image from 'next/image';
 
 export default function LoginPage() {
   const router = useRouter()
@@ -36,7 +37,7 @@ export default function LoginPage() {
 
       {/* Background Blur */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/authIMG/login-bg.jpg"
           alt="Background"
           className="w-full h-full object-cover blur-sm scale-105"
@@ -47,11 +48,10 @@ export default function LoginPage() {
       {/* Login Card */}
       <div className="relative z-10 bg-white rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl overflow-hidden">
         <div className="hidden md:flex items-center justify-center bg-white">
-          <img
+          <Image
             src="/images/authIMG/login.jpg"
             alt="Login Illustration"
-            className="w-full h-auto"
-          />
+            className="w-full h-auto"/>
         </div>
 
         {/* Right Form */}
@@ -110,11 +110,12 @@ export default function LoginPage() {
           </form>
 
           <p className="text-sm text-center mt-6 text-gray-600">
-            Don't have an account?
+            Don&#39;t have an account?
             <Link href="/auth/register" className="text-green-600 font-medium hover:underline ml-1">
               Register
             </Link>
           </p>
+
         </div>
       </div>
     </div>

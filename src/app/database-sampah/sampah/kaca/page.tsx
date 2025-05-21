@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from 'next/image';
 
 export default function KacaPage() {
   return (
@@ -13,9 +14,8 @@ export default function KacaPage() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative w-full h-72 md:h-96"
-        >
-          <img
+          className="relative w-full h-72 md:h-96">
+          <Image
             src="/images/sampah/kaca.png"
             alt="Sampah Kaca"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[35%_40%_45%_50%_/_55%_50%_40%_45%]"

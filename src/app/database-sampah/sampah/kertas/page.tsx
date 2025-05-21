@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from 'next/image';
 
 export default function KertasPage() {
   return (
@@ -14,7 +15,7 @@ export default function KertasPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="relative w-full h-72 md:h-96">
-          <img
+          <Image
             src="/images/sampah/kertas.jpg"
             alt="Sampah Kertas"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[50%_10%_30%_10%_/_20%_50%_20%_40%]"

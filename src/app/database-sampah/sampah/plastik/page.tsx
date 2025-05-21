@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from 'next/image';
 
 export default function PlastikPage() {
   return (
@@ -14,7 +15,7 @@ export default function PlastikPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="relative w-full h-72 md:h-96">
-          <img
+          <Image
             src="/images/sampah/plastik.jpg"
             alt="Sampah Plastik"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[35%_45%_40%_30%_/_30%_40%_35%_45%]"
