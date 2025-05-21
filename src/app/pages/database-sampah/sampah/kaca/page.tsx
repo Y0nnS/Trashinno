@@ -1,9 +1,8 @@
 'use client';
 
-import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Twitter, Mail, Phone, ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function KacaPage() {
   return (
