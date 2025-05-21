@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <Link href="#pelajari-lebih">
             <div className="mt-6 inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full text-sm md:text-md transition shadow">
-              Pelajari Lebih Lanjut
+              Pelajari Lebih Lanjuts
             </div>
           </Link>
         </div>
