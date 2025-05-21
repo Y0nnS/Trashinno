@@ -19,6 +19,8 @@ export default function BesiPage() {
             src="/images/sampah/besi.png"
             alt="Sampah Besi dan Logam"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[50%_40%_50%_40%_/_40%_50%_40%_50%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

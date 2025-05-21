@@ -19,6 +19,8 @@ export default function PlastikPage() {
             src="/images/sampah/plastik.jpg"
             alt="Sampah Plastik"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[35%_45%_40%_30%_/_30%_40%_35%_45%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

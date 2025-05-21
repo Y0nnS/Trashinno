@@ -7,7 +7,7 @@ import {  ChevronRight } from "lucide-react";
 
 export default function MasalahKitaPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-green-50 to-white py-16 px-6">
+    <main className="min-h-screen bg-[#F8F8FF] py-16 px-6">
       <div className="max-w-5xl mx-auto space-y-20">
 
         {/* Judul */}

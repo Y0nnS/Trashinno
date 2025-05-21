@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-[#F8F8FF] shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-green-600 font-bold text-2xl">Trashinno.</Link>
@@ -16,10 +16,10 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6 text-sm text-gray-700">
           <Link href="/" className="hover:text-green-600 hover:underline">Beranda</Link>
-          <Link href="../pages/tentangKami" className="hover:text-green-600 hover:underline">Tentang Kami</Link>
-          <Link href="../pages/masalahKita" className="hover:text-green-600 hover:underline">Masalah Kita</Link>
-          <Link href="../pages/solusiKami" className="hover:text-green-600 hover:underline">Solusi Kita</Link>
-          <Link href="../pages/kontak" className="hover:text-green-600 hover:underline">Kontak Kami</Link>
+          <Link href="../tentangKami" className="hover:text-green-600 hover:underline">Tentang Kami</Link>
+          <Link href="../masalahKita" className="hover:text-green-600 hover:underline">Masalah Kita</Link>
+          <Link href="../solusiKami" className="hover:text-green-600 hover:underline">Solusi Kita</Link>
+          <Link href="../kontak" className="hover:text-green-600 hover:underline">Kontak Kami</Link>
 
           {/* Bahasa */}
           <button className="flex items-center hover:text-green-600">
@@ -52,10 +52,10 @@ const Navbar: React.FC = () => {
         </div>
         <div className="px-6 py-2 space-y-4 text-gray-700">
           <Link href="../" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Beranda</Link>
-          <Link href="../pages/tentangKami" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Tentang Kami</Link>
-          <Link href="../pages/masalahKita" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Masalah Kita</Link>
-          <Link href="../pages/solusiKami" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Solusi Kita</Link>
-          <Link href="../pages/kontak" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Kontak Kami</Link>
+          <Link href="../tentangKami" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Tentang Kami</Link>
+          <Link href="../masalahKita" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Masalah Kita</Link>
+          <Link href="../solusiKami" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Solusi Kita</Link>
+          <Link href="../kontak" onClick={() => setMobileOpen(false)} className="block hover:text-green-600">Kontak Kami</Link>
           <div className="flex items-center gap-2 pt-2">
             <Globe className="h-4 w-4" />
             <span>Indonesia</span>

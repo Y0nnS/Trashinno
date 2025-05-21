@@ -19,6 +19,8 @@ export default function AluminiumPage() {
             src="/images/sampah/aluminium.png"
             alt="Sampah Aluminium"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[40%_30%_35%_30%_/_30%_40%_30%_35%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

@@ -24,13 +24,15 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
+
     if (password !== confirmPassword) {
       setError('Password and Confirm Password do not match')
       return
     }
-    setLoading(true)
 
+    setLoading(true)
     try {
+      // Signup user via Supabase Auth
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
@@ -42,54 +44,63 @@ export default function RegisterPage() {
       })
       if (signUpError) throw signUpError
 
-      const user = data.user
-      if (!user) throw new Error('Failed to get user after sign up.')
+      // Dapatkan session user
+      const { data: sessionData, error: sessionError } = await supabase.auth.getSession()
+      if (sessionError) throw sessionError
+      const session = sessionData?.session
+      if (!session || !session.user) throw new Error('Session not available after sign up')
 
+      // Cek apakah user sudah ada di tabel accounts
+      const { data: existingUser, error: selectError } = await supabase
+        .from('accounts')
+        .select('id')
+        .eq('id', session.user.id)
+        .single()
+
+      // Error selain "no rows found" (kode PGRST116) dilempar
+      if (selectError && selectError.code !== 'PGRST116') {
+        throw selectError
+      }
+
+      // Kalau user belum ada, baru insert
+      if (!existingUser) {
         const { error: insertError } = await supabase
           .from('accounts')
-          .insert([
+          .upsert([
             {
-              id: user.id,
-              email: user.email,
+              id: session.user.id,
+              email: session.user.email,
               full_name: fullName,
               role: 'user',
             },
           ])
-          .select()
-        
-        if (insertError) {
-          console.error('Insert error details:', insertError)
-          throw new Error(
-            'Account created, but failed to save profile: ' +
-              (insertError.message || JSON.stringify(insertError))
-          )
-        }
 
-      router.push('/auth/login')
+        if (insertError) throw insertError
+      }
+
+      router.push('/auth/login?success=register')
     } catch (err: unknown) {
       const e = err as UnknownError
-      setError(e.message ?? JSON.stringify(e))
+      setError(e.message ?? 'Something went wrong')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
-      {/* Background Image Blur */}
+    <main className="relative min-h-200 flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/authIMG/login-bg.jpg"
           alt="Background"
           className="w-full h-full object-cover blur-sm scale-105"
-          fill
-          priority
+          width={200}
+          height={200}
         />
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
 
-      {/* Register Card */}
-      <div className="relative z-10 bg-white shadow-lg rounded-xl overflow-hidden grid md:grid-cols-2 w-full h-auto max-w-4xl">
+      <div className="relative z-10 bg-[#F8F8FF] shadow-lg rounded-xl overflow-hidden grid md:grid-cols-2 w-full h-auto max-w-4xl">
         <div className="hidden md:flex items-center justify-center bg-gray-50">
           <Image
             src="/images/authIMG/register.jpg"
@@ -100,7 +111,7 @@ export default function RegisterPage() {
             priority
           />
         </div>
-        {/* Right Form */}
+
         <div className="p-8 w-full">
           <h2 className="text-2xl font-bold text-gray-800 mb-1">
             Register to <span className="text-green-600">Trashinno</span>

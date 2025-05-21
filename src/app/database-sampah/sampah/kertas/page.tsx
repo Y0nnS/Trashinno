@@ -19,6 +19,8 @@ export default function KertasPage() {
             src="/images/sampah/kertas.jpg"
             alt="Sampah Kertas"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[50%_10%_30%_10%_/_20%_50%_20%_40%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

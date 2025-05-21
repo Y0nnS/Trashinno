@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-green-50 text-gray-800 font-sans">
+    <main className="min-h-screen bg-[#F8F8FF] text-gray-800 font-sans">
 
       {/* Hero Section */}
       <section
@@ -77,13 +77,13 @@ export default function Home() {
 
         <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {[
-            { icon: "📄", label: "Kertas", link: "./pages/database-sampah/sampah/kertas" },
-            { icon: "🧴", label: "Plastik", link: "./pages/database-sampah/sampah/plastik" },
-            { icon: "🥫", label: "Aluminium", link: "./pages/database-sampah/sampah/aluminium" },
-            { icon: "🛠️", label: "Besi & Logam", link: "./pages/database-sampah/sampah/besi" },
-            { icon: "💻", label: "Elektronik", link: "./pages/database-sampah/sampah/elektronik" },
-            { icon: "🍾", label: "Botol Kaca", link: "./pages/database-sampah/sampah/kaca" },
-            { icon: "🍂", label: "Khusus", link: "./pages/database-sampah/sampah/khusus" },
+            { icon: "📄", label: "Kertas", link: "./database-sampah/sampah/kertas" },
+            { icon: "🧴", label: "Plastik", link: "./database-sampah/sampah/plastik" },
+            { icon: "🥫", label: "Aluminium", link: "./database-sampah/sampah/aluminium" },
+            { icon: "🛠️", label: "Besi & Logam", link: "./database-sampah/sampah/besi" },
+            { icon: "💻", label: "Elektronik", link: "./database-sampah/sampah/elektronik" },
+            { icon: "🍾", label: "Botol Kaca", link: "./database-sampah/sampah/kaca" },
+            { icon: "🍂", label: "Khusus", link: "./database-sampah/sampah/khusus" },
           ].map((item, index) => (
             <Link href={item.link} key={index}>
               <div className="cursor-pointer bg-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition p-6 flex flex-col items-center justify-center text-center">

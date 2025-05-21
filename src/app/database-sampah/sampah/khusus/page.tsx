@@ -19,6 +19,8 @@ export default function SampahKhususPage() {
             src="/images/sampah/khusus.png"
             alt="Sampah Khusus"
             className="w-full h-full object-cover shadow-xl hover:rotate-1 hover:scale-105 transition rounded-[20%_30%_40%_50%_/_50%_40%_30%_20%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

@@ -3,9 +3,9 @@ import React from 'react';
 
 export default function Kontak() {
   return (
-    <main className=" bg-gradient-to-br from-green-50 via-white to-green-100">
+    <main className=" bg-[#F8F8FF] pt-20">
       {/* Solusi Kami */}
-    <section className="bg-white pt-20 pb-32">
+    <section className="bg-[#F8F8FF]pt-20 pb-32">
     <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
 
         {/* Info Kontak */}

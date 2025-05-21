@@ -1,4 +1,4 @@
-import Sidebar from "../../components/dashboard/sidebar";
+import Sidebar from "../../../components/dashboard/sidebar";
 import React from "react";
 
 // app/dashboard/layout.tsx

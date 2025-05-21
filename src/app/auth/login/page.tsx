@@ -1,57 +1,78 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
-import Image from 'next/image';
+import { handleLogin, getAccountProfile } from '@/utils/auth'
+import Image from 'next/image'
 
 export default function LoginPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const success = searchParams.get('success')
+    if (success === 'register') {
+      setSuccessMessage('Account registered successfully! Check your email, and Verify your account.')
+      setTimeout(() => setSuccessMessage(null), 5000)
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError(null)
-
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-
-    setLoading(false)
-
-    if (error) {
-      setError(error.message)
-    } else {
-      router.push('/')
+  
+    try {
+      // 1. Login
+      const loginData = await handleLogin(email, password)
+  
+      // 2. Ambil profil dari tabel accounts
+      const profile = await getAccountProfile()
+  
+      // 3. Redirect sesuai role
+      if (profile.role === 'admin') {
+        router.push('/admin/dashboard')
+      } else {
+        router.push('../../user-home/')
+      }
+    } catch (error: any) {
+      setError(error.message || 'Login gagal')
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
-
+    <div className="relative min-h-200 flex items-center justify-center bg-[#F8F8FF]0 px-4 overflow-hidden">
       {/* Background Blur */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/authIMG/login-bg.jpg"
           alt="Background"
           className="w-full h-full object-cover blur-sm scale-105"
+          width={200}
+          height={200}
         />
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
 
       {/* Login Card */}
-      <div className="relative z-10 bg-white rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl overflow-hidden">
+      <div className="relative z-10 bg-[#F8F8FF] rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl overflow-hidden">
         <div className="hidden md:flex items-center justify-center bg-white">
           <Image
             src="/images/authIMG/login.jpg"
             alt="Login Illustration"
-            className="w-full h-auto"/>
+            width={1200}
+            height={800}
+          />
         </div>
 
         {/* Right Form */}
@@ -61,6 +82,11 @@ export default function LoginPage() {
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
+            {successMessage && (
+              <div className="p-2 text-green-700 bg-green-100 border border-green-600 rounded mb-4">
+                {successMessage}
+              </div>
+            )}
             {error && (
               <div className="p-2 text-red-600 border border-red-600 rounded">
                 {error}
@@ -68,25 +94,27 @@ export default function LoginPage() {
             )}
 
             <div>
-              <label className="text-sm font-medium text-gray-600">Email</label>
+              <label className="text-sm font-medium text-zinc-800">Email</label>
               <input
                 type="email"
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-zinc-800"
                 placeholder="you@example.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                required/>
+                required
+              />
             </div>
 
             <div>
-              <label className="text-sm font-medium text-gray-600">Password</label>
+              <label className="text-sm font-medium text-zinc-800">Password</label>
               <input
                 type="password"
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-zinc-800"
                 placeholder="********"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                required/>
+                required
+              />
             </div>
 
             <div className="flex justify-between items-center text-sm">
@@ -115,7 +143,6 @@ export default function LoginPage() {
               Register
             </Link>
           </p>
-
         </div>
       </div>
     </div>

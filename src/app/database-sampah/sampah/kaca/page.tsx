@@ -19,6 +19,8 @@ export default function KacaPage() {
             src="/images/sampah/kaca.png"
             alt="Sampah Kaca"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[35%_40%_45%_50%_/_55%_50%_40%_45%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

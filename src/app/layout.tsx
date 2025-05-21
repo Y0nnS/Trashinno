@@ -1,21 +1,30 @@
-import type { Metadata } from "next";
-import AppWrapper from "../components/layout/AppWrapper";
-import "../styles/globals.css";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Your App",
-  description: "App description",
-};
+import { usePathname } from 'next/navigation';
+import NavbarDefault from '../components/layout/navbar';
+import NavbarUser from '../components/layout/navbarUser';
+import Footer from '../components/layout/footer';
+import '../styles/globals.css';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  const isUserRoute = pathname.startsWith('/user');
+  const isAdminRoute = pathname.startsWith('/admin');
+
   return (
     <html lang="en">
       <body>
-        <AppWrapper>{children}</AppWrapper>
+    {/* Navbar */}
+    {!isAdminRoute && (
+      isUserRoute ? <NavbarUser /> : <NavbarDefault />
+    )}
+
+    {/* Halaman Utama */}
+    {children}
+
+    {/* Footer hanya untuk halaman default */}
+    {!isUserRoute && !isAdminRoute && <Footer />}
       </body>
     </html>
   );

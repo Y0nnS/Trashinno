@@ -7,7 +7,7 @@ import {  ChevronRight } from "lucide-react";
 
 export default function TentangKami() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
+    <main className="min-h-screen bg-[#F8F8FF]">
       <section
         className="min-h-[60vh] bg-cover bg-center relative flex items-center justify-center"
         style={{ backgroundImage: "url('/images/about-bg.jpg')" }}>

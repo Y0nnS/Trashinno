@@ -19,6 +19,8 @@ export default function ElektronikPage() {
             src="/images/sampah/elektronik.png"
             alt="Sampah Elektronik"
             className="w-full h-full object-cover shadow-xl hover:scale-105 transition rounded-[45%_55%_40%_50%_/_50%_40%_55%_45%]"
+            width={500}
+            height={500}
           />
         </motion.div>
 

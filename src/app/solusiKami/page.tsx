@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function SolusiKami() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
+    <main className="min-h-screen bg-[#F8F8FF]">
       {/* Solusi Kami */}
       <section className="max-w-6xl mx-auto mb-20 px-6 pt-20">
         <h2 className="text-2xl font-bold text-green-800 text-center mb-10">Solusi Kami</h2>

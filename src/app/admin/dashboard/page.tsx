@@ -32,23 +32,6 @@ export default function DashboardPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar */}
-      <nav className="w-60 bg-white p-6 shadow-md">
-        <h2 className="text-2xl font-bold mb-6">Menu</h2>
-        <ul>
-          {menuItems.map(({ name, icon: Icon, href }) => (
-            <li key={name} className="mb-4">
-              <Link href={href}>
-                <a className="flex items-center gap-3 text-gray-700 hover:text-green-600 transition">
-                  <Icon size={20} />
-                  {name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
       {/* Main Content */}
       <div className="flex flex-col flex-1">
         <header className="bg-white shadow px-6 py-4 flex justify-between items-center">
@@ -59,8 +42,7 @@ export default function DashboardPage() {
               disabled={loading}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
                 loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 text-white'
-              }`}
-            >
+              }`}>
               <RefreshCcw size={16} className={loading ? 'animate-spin' : ''} />
               {loading ? 'Memuat...' : 'Ambil Data dari IoT'}
             </button>
