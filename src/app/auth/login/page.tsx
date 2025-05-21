@@ -51,7 +51,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative min-h-200 flex items-center justify-center bg-[#F8F8FF]0 px-4 overflow-hidden">
+    <div className="relative min-h-270 flex items-center justify-center bg-[#F8F8FF]0 px-4 overflow-hidden">
       {/* Background Blur */}
       <div className="absolute inset-0 z-0">
         <Image

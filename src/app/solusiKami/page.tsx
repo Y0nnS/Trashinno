@@ -6,8 +6,21 @@ import React from 'react';
 export default function SolusiKami() {
   return (
     <main className="min-h-screen bg-[#F8F8FF]">
+      <section
+        className="min-h-[60vh] bg-cover bg-center relative flex items-center justify-center"
+        style={{ backgroundImage: "url('/images/solusiIMG/solusi-bg.jpg')" }}>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white px-6">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
+          Solusi Kami untuk Mengatasi Masalah Sampah
+          </h1>
+          <p className="text-sm md:text-lg max-w-2xl mx-auto">
+          Kami percaya teknologi dan edukasi adalah kunci mengubah perilaku masyarakat dalam pengelolaan sampah, demi lingkungan yang lebih bersih dan sehat bagi generasi mendatang.
+          </p>
+        </div>
+      </section>
       {/* Solusi Kami */}
-      <section className="max-w-6xl mx-auto mb-20 px-6 pt-20">
+      <section className="max-w-6xl h-200 mx-auto px-6 pt-20">
         <h2 className="text-2xl font-bold text-green-800 text-center mb-10">Solusi Kami</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[

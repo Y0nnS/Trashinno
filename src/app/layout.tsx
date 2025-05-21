@@ -6,6 +6,13 @@ import NavbarUser from '../components/layout/navbarUser';
 import Footer from '../components/layout/footer';
 import '../styles/globals.css';
 
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
@@ -13,18 +20,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const isAdminRoute = pathname.startsWith('/admin');
 
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <body>
-    {/* Navbar */}
-    {!isAdminRoute && (
-      isUserRoute ? <NavbarUser /> : <NavbarDefault />
-    )}
+        {!isAdminRoute && (isUserRoute ? <NavbarUser /> : <NavbarDefault />)}
 
-    {/* Halaman Utama */}
-    {children}
+        {children}
 
-    {/* Footer hanya untuk halaman default */}
-    {!isUserRoute && !isAdminRoute && <Footer />}
+        {!isUserRoute && !isAdminRoute && <Footer />}
       </body>
     </html>
   );

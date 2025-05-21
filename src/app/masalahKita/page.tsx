@@ -7,8 +7,21 @@ import {  ChevronRight } from "lucide-react";
 
 export default function MasalahKitaPage() {
   return (
-    <main className="min-h-screen bg-[#F8F8FF] py-16 px-6">
-      <div className="max-w-5xl mx-auto space-y-20">
+    <main className="min-h-screen bg-[#F8F8FF]">
+      <section
+        className="min-h-[60vh] bg-cover bg-[center_70%] relative flex items-center justify-center"
+        style={{ backgroundImage: "url('/images/masalahIMG/masalah-bg.jpg')" }}>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white px-6">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
+          Masalah Kita: Sampah yang Tak Terurus
+          </h1>
+          <p className="text-sm md:text-lg max-w-2xl mx-auto">
+          Sampah adalah masalah serius yang sering dianggap sepele. Tapi dampaknya bisa menghancurkan lingkungan, ekonomi, dan kesehatan kita jika terus diabaikan.
+          </p>
+        </div>
+      </section>
+      <div className="max-w-5xl mx-auto space-y-20 pt-20">
 
         {/* Judul */}
         <motion.div
@@ -98,7 +111,7 @@ export default function MasalahKitaPage() {
           </h3>
           <p className="text-gray-600 mb-4">Mari kita mulai perubahan kecil hari ini. Bersama, kita bisa wujudkan Indonesia yang bersih dan berkelanjutan.</p>
           <Link href="/tentang-kami">
-          <span className="inline-flex items-center gap-2 bg-green-600 text-white px-3 py-1.5 mt-4 rounded-full shadow hover:bg-green-700 transition cursor-pointer text-sm">
+          <span className="mb-20 inline-flex items-center gap-2 bg-green-600 text-white px-3 py-1.5 mt-4 rounded-full shadow hover:bg-green-700 transition cursor-pointer text-sm">
               Kenali Trashinno Lebih Lanjut <ChevronRight className="w-5 h-5 text-white hover:text-white" />
             </span>
           </Link>

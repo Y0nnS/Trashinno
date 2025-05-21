@@ -7,20 +7,15 @@ export default function Home() {
       {/* Hero Section */}
       <section
         className="min-h-[60vh] bg-cover bg-[center_85%] relative flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/home-bg.jpg')" }}>
+        style={{ backgroundImage: "url('/images/home-bg2.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-6">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            Yuk Mulai Memilah Sampah dari Sekarang! 🌍
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
+            Ayo Jaga Lingkungan Kita Bersama Trashinno!
           </h1>
           <p className="text-sm md:text-lg max-w-2xl mx-auto">
-            Kebersihan dimulai dari rumah: pisahkan sampah organik, anorganik, dan berbahaya untuk bumi yang lebih baik.
+            Bergabunglah dengan kami untuk mengurangi sampah dan menciptakan lingkungan yang lebih bersih dan sehat. Dengan teknologi dan edukasi, kita bisa membuat perbedaan!
           </p>
-          <Link href="#pelajari-lebih">
-            <div className="mt-6 inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full text-sm md:text-md transition shadow">
-              Pelajari Lebih Lanjuts
-            </div>
-          </Link>
         </div>
       </section>
 
@@ -100,7 +95,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-2">Siap Jadi Bagian dari Perubahan?</h2>
         <p className="mb-6">Gabung bersama kami untuk masa depan yang lebih bersih dan sehat 🌿</p>
         <Link href="/auth/register">
-          <div className="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-100 transition">
+          <div className="inline-block bg-white text-green-700 font-semibold px-6 py-3 rounded-full hover:bg-green-100 transition">
             Daftar Sekarang
           </div>
         </Link>

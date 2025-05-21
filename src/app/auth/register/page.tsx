@@ -88,7 +88,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="relative min-h-200 flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
+    <main className="relative min-h-270 flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/authIMG/login-bg.jpg"
