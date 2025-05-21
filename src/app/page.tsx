@@ -1,103 +1,112 @@
 import Image from "next/image";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-green-50 text-gray-800 font-sans">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section
+        className="min-h-[60vh] bg-cover bg-[center_85%] relative flex items-center justify-center"
+        style={{ backgroundImage: "url('/images/home-bg.jpg')" }}>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white px-6">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+            Yuk Mulai Memilah Sampah dari Sekarang! 🌍
+          </h1>
+          <p className="text-sm md:text-lg max-w-2xl mx-auto">
+            Kebersihan dimulai dari rumah: pisahkan sampah organik, anorganik, dan berbahaya untuk bumi yang lebih baik.
+          </p>
+          <Link href="#pelajari-lebih">
+            <div className="mt-6 inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full text-sm md:text-md transition shadow">
+              Pelajari Lebih Lanjut
+            </div>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Edukasi Section */}
+      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+        <h2 className="text-lg md:text-2xl font-bold text-green-700 mb-4">
+          Mengelola Sampah Itu Penting 🌱
+        </h2>
+        <p className="text-sm md:text-lg mb-8 text-gray-700">
+          Yuk mulai gaya hidup berkelanjutan dengan memisahkan sampah organik, anorganik, dan B3 (Bahan Berbahaya & Beracun). Kecil tapi berdampak besar!
+        </p>
+        <Link href="/auth/register">
+          <div className="inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition text-sm">
+            Bergabung Sekarang
+          </div>
+        </Link>
+      </section>
+
+      {/* Tipe Sampah */}
+      <section
+        id="pelajari-lebih"
+        className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "♻️ Sampah Organik",
+            desc: "Sisa makanan, daun, dan bahan alami lainnya. Dapat dikomposkan untuk menyuburkan tanah.",
+          },
+          {
+            title: "🧴 Sampah Anorganik",
+            desc: "Termasuk plastik, logam, dan kaca. Bisa didaur ulang untuk mengurangi limbah.",
+          },
+          {
+            title: "☠️ Sampah B3",
+            desc: "Baterai, obat, elektronik rusak. Harus dikelola khusus agar tidak membahayakan lingkungan.",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition duration-300">
+            <h3 className="text-lg font-semibold text-green-700 mb-2">{item.title}</h3>
+            <p className="text-gray-600 text-md">{item.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Jenis Sampah yang Didaur Ulang */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-lg md:text-2xl font-bold text-green-800">Jenis Sampah</h2>
+          <p className="text-gray-600 mt-2 text-sm md:text-lg">
+            Lihat semua jenis sampah yang dapat didaur ulang.
+          </p>
+        </div>
+
+        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {[
+            { icon: "📄", label: "Kertas", link: "./pages/database-sampah/sampah/kertas" },
+            { icon: "🧴", label: "Plastik", link: "./pages/database-sampah/sampah/plastik" },
+            { icon: "🥫", label: "Aluminium", link: "./pages/database-sampah/sampah/aluminium" },
+            { icon: "🛠️", label: "Besi & Logam", link: "./pages/database-sampah/sampah/besi" },
+            { icon: "💻", label: "Elektronik", link: "./pages/database-sampah/sampah/elektronik" },
+            { icon: "🍾", label: "Botol Kaca", link: "./pages/database-sampah/sampah/kaca" },
+            { icon: "🍂", label: "Khusus", link: "./pages/database-sampah/sampah/khusus" },
+          ].map((item, index) => (
+            <Link href={item.link} key={index}>
+              <div className="cursor-pointer bg-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition p-6 flex flex-col items-center justify-center text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-800">{item.label}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer Tambahan */}
+      <section className="bg-green-600 text-white py-12 text-center">
+        <h2 className="text-2xl font-bold mb-2">Siap Jadi Bagian dari Perubahan?</h2>
+        <p className="mb-6">Gabung bersama kami untuk masa depan yang lebih bersih dan sehat 🌿</p>
+        <Link href="/auth/register">
+          <div className="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-100 transition">
+            Daftar Sekarang
+          </div>
+        </Link>
+      </section>
+    </main>
   );
 }
