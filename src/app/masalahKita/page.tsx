@@ -9,19 +9,19 @@ export default function MasalahKitaPage() {
   return (
     <main className="min-h-screen bg-[#F8F8FF]">
       <section
-        className="min-h-[60vh] bg-cover bg-[center_70%] relative flex items-center justify-center"
+        className="min-h-[60vh] bg-cover bg-[center_85%] relative flex items-center px-0 md:px-10 lg:px-40"
         style={{ backgroundImage: "url('/images/masalahIMG/masalah-bg.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-white px-6">
+        <div className="relative z-10 text-white px-6">
           <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Masalah Kita: Sampah yang Tak Terurus
           </h1>
-          <p className="text-sm md:text-lg max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg max-w-2xl">
           Sampah adalah masalah serius yang sering dianggap sepele. Tapi dampaknya bisa menghancurkan lingkungan, ekonomi, dan kesehatan kita jika terus diabaikan.
           </p>
         </div>
       </section>
-      <div className="max-w-5xl mx-auto space-y-20 pt-20">
+      <div className="max-w-5xl mx-auto space-y-20 pt-20 px-4">
 
         {/* Judul */}
         <motion.div

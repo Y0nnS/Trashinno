@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +9,14 @@ const Footer: React.FC = () => {
     <footer className="bg-zinc-900 text-white">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <h2 className="text-2xl font-bold mb-4 text-green-600">Trashinno.</h2>
+        {/* Logo */}
+        <Image
+          src="/images/logo.png"
+          alt="Logo"
+          width={180}
+          height={100}
+          className="hidden md:block"
+          />
           <p className="text-sm text-zinc-300 mb-4">
             Edukasi pengelolaan sampah & gaya hidup berkelanjutan untuk masa depan yang lebih hijau 🌱
           </p>

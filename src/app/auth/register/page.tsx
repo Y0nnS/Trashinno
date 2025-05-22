@@ -89,14 +89,17 @@ export default function RegisterPage() {
 
   return (
     <main className="relative min-h-270 flex items-center justify-center bg-gray-100 px-4 overflow-hidden">
+      {/* Background Blur */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/authIMG/login-bg.jpg"
+          src="/images/authIMG/auth-bg2.jpg"
           alt="Background"
-          className="w-full h-full object-cover blur-sm scale-105"
-          width={200}
-          height={200}
-        />
+          fill
+          className="object-cover w-full h-full"
+          priority
+          quality={100}/>
+
+        {/* Overlay blur */}
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
 

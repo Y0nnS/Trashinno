@@ -7,8 +7,13 @@ import Image from 'next/image';
 
 export default function PlastikPage() {
   return (
-    <main className="min-h-screen py-16 px-6 bg-gradient-to-br from-green-50 via-white to-green-100">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-40 items-center">
+    <main className="min-h-screen  bg-[#F8F8FF]">
+      <section
+        className="min-h-[9vh] bg-cover bg-[center_25%] relative flex items-center px-0 md:px-10 lg:px-40"
+        style={{ backgroundImage: "url('/images/sampah/sampah-bg.jpg')" }}>
+        <div className="absolute inset-0 bg-black/60" />
+      </section>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-40 items-center py-20 px-6 ">
         {/* Gambar Kiri */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

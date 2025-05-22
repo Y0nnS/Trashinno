@@ -14,7 +14,7 @@ export const handleRegister = async (
         full_name: fullName ?? null,
       },
     },
-  })
+  })  
 
   if (signUpError) throw new Error(signUpError.message)
 

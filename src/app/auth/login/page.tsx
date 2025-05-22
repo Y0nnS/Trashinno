@@ -55,12 +55,14 @@ export default function LoginPage() {
       {/* Background Blur */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/authIMG/login-bg.jpg"
+          src="/images/authIMG/auth-bg2.jpg"
           alt="Background"
-          className="w-full h-full object-cover blur-sm scale-105"
-          width={200}
-          height={200}
-        />
+          fill
+          className="object-cover w-full h-full"
+          priority
+          quality={100}/>
+
+        {/* Overlay blur */}
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
 
@@ -68,7 +70,7 @@ export default function LoginPage() {
       <div className="relative z-10 bg-[#F8F8FF] rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl overflow-hidden">
         <div className="hidden md:flex items-center justify-center bg-white">
           <Image
-            src="/images/authIMG/login.jpg"
+            src="/images/authIMG/login2.jpg"
             alt="Login Illustration"
             width={1200}
             height={800}

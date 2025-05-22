@@ -9,14 +9,14 @@ export default function TentangKami() {
   return (
     <main className="min-h-screen bg-[#F8F8FF]">
       <section
-        className="min-h-[60vh] bg-cover bg-center relative flex items-center justify-center"
+        className="min-h-[60vh] bg-cover bg-[center_85%] relative flex items-center px-0 md:px-10 lg:px-40"
         style={{ backgroundImage: "url('/images/tentangKita/tentangkita-bg.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-white px-6">
+        <div className="relative z-10 text-white px-6">
           <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Tentang Kami: Trashinno
           </h1>
-          <p className="text-sm md:text-lg max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg max-w-2xl">
           Kami adalah tim inovator muda yang berkomitmen untuk mengubah cara masyarakat memandang dan mengelola sampah. Dengan teknologi dan edukasi, kami hadir untuk menciptakan dampak positif bagi lingkungan.
           </p>
         </div>

@@ -5,15 +5,15 @@ export default function Kontak() {
   return (
     <main className="min-h-screen bg-[#F8F8FF]">
       <section
-        className="min-h-[60vh] bg-cover bg-[center_25%] relative flex items-center justify-center"
+        className="min-h-[60vh] bg-cover bg-[center_25%] relative flex items-center px-0 md:px-10 lg:px-40"
         style={{ backgroundImage: "url('/images/kontakIMG/kontak-bg.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-white px-6">
+        <div className="relative z-10 text-white px-6">
           <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Kontak Kami
           </h1>
-          <p className="text-sm md:text-lg max-w-2xl mx-auto">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum deleniti maxime saepe? Quos voluptate beatae quidem, dicta excepturi tempore in!.
+          <p className="text-sm md:text-lg max-w-2xl">
+          Kami di Trashinno selalu siap mendengarkan masukan, pertanyaan, atau saran dari Anda. Mari bersama-sama kita jaga lingkungan kita!
           </p>
         </div>
       </section>
