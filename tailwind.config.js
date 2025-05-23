@@ -6,6 +6,7 @@ module.exports = {
             },
         },
     },
+    darkMode: "class", // supaya dark mode aktif kalau ada class 'dark' di html root
     content: [
         './src/**/*.{js,ts,jsx,tsx}',
         './app/**/*.{js,ts,jsx,tsx}',

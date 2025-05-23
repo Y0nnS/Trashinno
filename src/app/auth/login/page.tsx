@@ -41,7 +41,7 @@ export default function LoginPage() {
       if (profile.role === 'admin') {
         router.push('/admin/dashboard')
       } else {
-        router.push('../../user-home/')
+        router.push('../../userHome/')
       }
     } catch (error: any) {
       setError(error.message || 'Login gagal')
@@ -51,7 +51,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative min-h-270 flex items-center justify-center bg-[#F8F8FF]0 px-4 overflow-hidden">
+    <div className="relative min-h-270 flex items-start pt-60 md:pt-0 justify-center md:items-center bg-[#F8F8FF] px-4 overflow-hidden">
       {/* Background Blur */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -70,10 +70,10 @@ export default function LoginPage() {
       <div className="relative z-10 bg-[#F8F8FF] rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl overflow-hidden">
         <div className="hidden md:flex items-center justify-center bg-white">
           <Image
-            src="/images/authIMG/login2.jpg"
+            src="/images/authIMG/login4.jpg"
             alt="Login Illustration"
-            width={1200}
-            height={800}
+            width={500}
+            height={500}
           />
         </div>
 

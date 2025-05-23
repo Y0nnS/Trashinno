@@ -106,7 +106,7 @@ export default function RegisterPage() {
       <div className="relative z-10 bg-[#F8F8FF] shadow-lg rounded-xl overflow-hidden grid md:grid-cols-2 w-full h-auto max-w-4xl">
         <div className="hidden md:flex items-center justify-center bg-gray-50">
           <Image
-            src="/images/authIMG/register.jpg"
+            src="/images/authIMG/register2.jpg"
             alt="Illustration"
             className="w-full"
             width={500}
