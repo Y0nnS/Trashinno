@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, Leaf, Recycle, Users, Globe, Cpu, BarChart, Award, School, Handshake } from 'lucide-react';
+import { ChevronRight, Leaf, Recycle, Users, Globe, Cpu, BarChart } from 'lucide-react';
 
 export default function TentangKami() {
   return (
@@ -13,8 +13,7 @@ export default function TentangKami() {
         {/* Background Image with Gradient Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: "url('/images/tentangKita/tentangkita-bg.jpg')" }}
-        />
+          style={{ backgroundImage: "url('/images/tentangKita/tentangkita-bg.jpg')" }}/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 z-0" />
         
         {/* Floating Leaves Animation */}
@@ -38,8 +37,7 @@ export default function TentangKami() {
               fontSize: Math.random() * 20 + 10,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`
-            }}
-          >
+            }}>
             <Leaf className="w-full h-full" />
           </motion.div>
         ))}
@@ -49,13 +47,11 @@ export default function TentangKami() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative z-10 text-white max-w-3xl backdrop-blur-sm bg-black/30 p-8 rounded-2xl shadow-2xl border border-white/10"
-        >
+          className="relative z-10 text-white max-w-3xl backdrop-blur-sm bg-black/30 p-8 rounded-2xl shadow-2xl border border-white/10">
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
+            transition={{ duration: 0.5, delay: 0.5 }}>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-md">
               <span className="text-green-400">Tentang</span> Trashinno
             </h1>
@@ -79,8 +75,7 @@ export default function TentangKami() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
               Visi & Misi
             </span>
@@ -97,14 +92,12 @@ export default function TentangKami() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 md:p-12 text-white mb-20 shadow-xl"
-          >
+            className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 md:p-12 text-white mb-20 shadow-xl">
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="md:w-1/2">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden shadow-lg"
-                >
+                  className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden shadow-lg">
                   <Image 
                     src="/images/about-logo1.jpg" 
                     alt="Tim Trashinno" 
@@ -126,8 +119,7 @@ export default function TentangKami() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-50 transition-colors"
-                    >
+                      className="flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-50 transition-colors">
                       Lihat Solusi Kami
                       <ChevronRight className="w-5 h-5" />
                     </motion.button>
@@ -143,8 +135,7 @@ export default function TentangKami() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-20"
-          >
+            className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">Solusi Komprehensif Kami</h2>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-10" />
             
@@ -168,24 +159,6 @@ export default function TentangKami() {
                   desc: 'Sistem pemantauan data sampah secara real-time untuk pengelolaan yang lebih efisien.',
                   color: 'bg-yellow-50'
                 },
-                { 
-                  icon: <Award className="w-8 h-8 text-green-600" />,
-                  title: 'Sistem Reward', 
-                  desc: 'Program gamifikasi dengan poin dan hadiah untuk mendorong partisipasi aktif masyarakat.',
-                  color: 'bg-purple-50'
-                },
-                { 
-                  icon: <School className="w-8 h-8 text-green-600" />,
-                  title: 'Program Edukasi', 
-                  desc: 'Workshop dan kurikulum sekolah untuk membangun kesadaran sejak dini.',
-                  color: 'bg-red-50'
-                },
-                { 
-                  icon: <Handshake className="w-8 h-8 text-green-600" />,
-                  title: 'Kemitraan Strategis', 
-                  desc: 'Kolaborasi dengan pemerintah, bisnis, dan komunitas untuk ekosistem berkelanjutan.',
-                  color: 'bg-indigo-50'
-                },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -193,8 +166,7 @@ export default function TentangKami() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className={`${item.color} p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all`}
-                >
+                  className={`${item.color} p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all`}>
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm mb-4">
                     {item.icon}
                   </div>

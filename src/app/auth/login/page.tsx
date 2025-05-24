@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { supabase } from '@/lib/supabaseClient'
 import { handleLogin, getAccountProfile } from '@/utils/auth'
+import { Suspense } from 'react'
+import SearchParamsSuccess from './searchParamsSuccess'
 import Image from 'next/image'
 
 export default function LoginPage() {
@@ -82,7 +83,9 @@ export default function LoginPage() {
           <h2 className="text-2xl font-semibold text-gray-800 mb-1">
             Login to <span className="font-bold text-green-600">Trashinno</span>
           </h2>
-
+            <Suspense fallback={null}>
+               <SearchParamsSuccess setSuccessMessage={setSuccessMessage} />
+            </Suspense>
           <form onSubmit={handleSubmit} className="space-y-5">
             {successMessage && (
               <div className="p-2 text-green-700 bg-green-100 border border-green-600 rounded mb-4">

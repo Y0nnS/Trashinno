@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Users, Leaf, Target, Handshake, Heart, Lightbulb, ChevronRight } from 'lucide-react';
+import { Leaf, Target, Handshake, Heart, Lightbulb, ChevronRight } from 'lucide-react';
 
 export default function TentangTeam() {
   const team = [
@@ -15,7 +15,84 @@ export default function TentangTeam() {
       social: {
         linkedin: '#',
         github: '#',
-        twitter: '#'
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Ahmad Faidh Rizky Abu Adha',
+      role: 'System Administrator',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam pengelolaan server dan infrastruktur TI. Memastikan sistem berjalan dengan baik dan aman.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Sherly kurnia anggraini',
+      role: 'Hipster',
+      img: '/images/team/anfin.jpg',
+      desc: 'Desainer UI/UX yang berfokus pada pengalaman pengguna yang intuitif dan menarik. Keahlian utama: Figma, Adobe XD.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Levina Cintania Islamy Putri Harnix ',
+      role: 'Cloud Computing',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam solusi cloud dan infrastruktur TI. Memastikan aplikasi berjalan dengan baik di lingkungan cloud.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Sania nazwa salsa bea',
+      role: 'Internet of Things',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam pengembangan perangkat IoT dan integrasi sistem. Menciptakan solusi pintar untuk pengelolaan sampah.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Galuh Ina Ariyanti',
+      role: 'Internet of Things',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam pengembangan perangkat IoT dan integrasi sistem. Menciptakan solusi pintar untuk pengelolaan sampah.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Farel bagas adiwitya',
+      role: 'Internet of Things',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam pengembangan perangkat IoT dan integrasi sistem. Menciptakan solusi pintar untuk pengelolaan sampah.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Haikal tyo',
+      role: 'Internet of Things',
+      img: '/images/team/anfin.jpg',
+      desc: 'Ahli dalam pengembangan perangkat IoT dan integrasi sistem. Menciptakan solusi pintar untuk pengelolaan sampah.',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
       }
     },
   ];
@@ -49,13 +126,10 @@ export default function TentangTeam() {
     <main className="min-h-screen bg-[#F8F8FF]">
       {/* Hero Section with Particles */}
       <section className="min-h-[75vh] relative overflow-hidden flex items-center px-6 md:px-10 lg:px-40">
-        {/* Background Image with Gradient Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: "url('/images/team/team-bg.jpg')" }}
-        />
+          style={{ backgroundImage: "url('/images/team/team-bg.jpg')" }}/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 z-0" />
-
         Content
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -108,8 +182,7 @@ export default function TentangTeam() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all"
-              >
+                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
                 <div className="relative h-64 w-full">
                   <Image
                     src={member.img}
@@ -140,11 +213,11 @@ export default function TentangTeam() {
                         </svg>
                       </a>
                     )}
-                    {member.social.twitter && (
-                      <a href={member.social.twitter} className="text-gray-500 hover:text-green-600 transition">
-                        <span className="sr-only">Twitter</span>
+                      {member.social.instagram && (
+                      <a href={member.social.instagram} className="text-gray-500 hover:text-green-600 transition">
+                        <span className="sr-only">Instagram</span>
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                         </svg>
                       </a>
                     )}
@@ -181,8 +254,7 @@ export default function TentangTeam() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-xl shadow-lg"
-            >
+              className="bg-white p-8 rounded-xl shadow-lg">
               <div className="flex items-center gap-3 mb-6">
                 <Leaf className="w-8 h-8 text-green-600" />
                 <h2 className="text-2xl font-bold text-gray-800">Misi Kami</h2>
@@ -218,8 +290,7 @@ export default function TentangTeam() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Nilai Inti Kami</h2>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-6" />
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -256,16 +327,14 @@ export default function TentangTeam() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6"
-              >
+                className="p-6">
                 <p className="text-4xl font-bold mb-2">{stat.value}</p>
                 <p className="text-green-100">{stat.label}</p>
               </motion.div>
@@ -282,8 +351,7 @@ export default function TentangTeam() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
-          >
+            className="space-y-6">
             <h2 className="text-3xl font-bold">Tertarik Bergabung dengan Tim Kami?</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Kami selalu mencari talenta baru yang berbagi semangat dan visi kami untuk lingkungan yang lebih baik.
@@ -293,8 +361,7 @@ export default function TentangTeam() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-50 transition-colors flex items-center gap-2 mx-auto"
-                >
+                  className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-50 transition-colors flex items-center gap-2 mx-auto">
                   Lihat Lowongan
                   <ChevronRight className="w-5 h-5" />
                 </motion.button>

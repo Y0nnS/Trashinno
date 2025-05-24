@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ChevronDown, Plus, Minus } from "lucide-react";
+import { ChevronRight, ChevronLeft, Plus, Minus } from "lucide-react";
 
 // Testimonial Component
 const testimonials = [
@@ -52,12 +52,11 @@ function Testimoni() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
-          >
+            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-50 flex items-center justify-center text-3xl">
               {testimonials[index].avatar}
             </div>
-            <p className="italic text-gray-700 text-lg mb-6 leading-relaxed">"{testimonials[index].text}"</p>
+            <p className="italic text-gray-700 text-lg mb-6 leading-relaxed">{testimonials[index].text}</p>
             <div>
               <h3 className="text-green-700 font-bold text-xl">{testimonials[index].name}</h3>
               <p className="text-gray-500">{testimonials[index].role}</p>
@@ -79,15 +78,13 @@ function Testimoni() {
         <button 
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white p-3 rounded-full shadow-md hover:bg-green-50 transition"
-          aria-label="Previous testimonial"
-        >
+          aria-label="Previous testimonial">
           <ChevronLeft className="w-5 h-5 text-green-600" />
         </button>
         <button 
           onClick={next}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white p-3 rounded-full shadow-md hover:bg-green-50 transition"
-          aria-label="Next testimonial"
-        >
+          aria-label="Next testimonial">
           <ChevronRight className="w-5 h-5 text-green-600" />
         </button>
       </div>
@@ -134,8 +131,7 @@ function FAQ() {
               onClick={() => toggleIndex(i)}
               className="w-full flex justify-between items-center px-6 py-5 bg-white hover:bg-gray-50 text-gray-800 font-semibold transition text-left"
               aria-expanded={openIndex === i}
-              aria-controls={`faq-${i}`}
-            >
+              aria-controls={`faq-${i}`}>
               <span className="text-lg">{item.q}</span>
               {openIndex === i ? (
                 <Minus className="w-5 h-5 text-green-600" />
@@ -216,8 +212,7 @@ function WasteTypes() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-gradient-to-b ${category.color} p-6 rounded-xl shadow-sm border ${category.border} h-full flex flex-col`}
-            >
+              className={`bg-gradient-to-b ${category.color} p-6 rounded-xl shadow-sm border ${category.border} h-full flex flex-col`}>
               <div className="text-5xl mb-5">{category.icon}</div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">{category.name}</h3>
               <p className="text-gray-600 mb-4 flex-grow">{category.description}</p>
@@ -319,8 +314,7 @@ function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 hover:border-green-300 transition-all hover:shadow-md h-full"
-            >
+              className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 hover:border-green-300 transition-all hover:shadow-md h-full">
               <div className={`w-16 h-16 rounded-full ${step.color} flex items-center justify-center text-2xl mb-5`}>
                 {step.icon}
               </div>
@@ -330,8 +324,7 @@ function HowItWorks() {
               {index === 0 && (
                 <Link 
                   href="/produk" 
-                  className="mt-4 text-sm text-green-600 hover:text-green-700 font-medium flex items-center justify-center gap-1"
-                >
+                  className="mt-4 text-sm text-green-600 hover:text-green-700 font-medium flex items-center justify-center gap-1">
                   Lihat produk <ChevronRight className="w-4 h-4" />
                 </Link>
               )}

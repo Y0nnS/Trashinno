@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import React from 'react';
-import { ChevronRight, Cpu, Globe, BarChart2, Award, School, Handshake, Users, Home, Trash2, Recycle, AlertTriangle, Leaf, Clock, Database, TrendingUp } from 'lucide-react';
+import { Cpu, Globe, Users, Home, Trash2, Recycle, AlertTriangle, Leaf, Clock, Database, TrendingUp } from 'lucide-react';
 
 export default function SolusiKami() {
   return (

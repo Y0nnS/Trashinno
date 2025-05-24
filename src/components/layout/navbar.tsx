@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div
           className={clsx(
-            "hidden md:flex items-center space-x-6 text-sm font-medium",
+            "hidden lg:flex items-center space-x-6 text-sm font-medium",
             isAuthPage || scrolled ? "text-gray-800" : "text-white"
           )}>
           <Link
@@ -240,7 +240,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           className={clsx(
-            "md:hidden focus:outline-none",
+            "lg:hidden focus:outline-none",
             isAuthPage || scrolled ? "text-gray-800" : "text-white"
           )}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -257,7 +257,7 @@ const Navbar: React.FC = () => {
       {mobileOpen && (
         <div
           className={clsx(
-            "md:hidden bg-white shadow-md px-4 py-6 text-gray-800 font-medium text-sm"
+            "lg:hidden bg-white shadow-md px-4 py-6 text-gray-800 font-medium text-sm"
           )}>
           <Link
             href="/"

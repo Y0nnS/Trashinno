@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, Globe, Menu, User, X } from "lucide-react";
+import { ChevronDown, Globe, Menu, User } from "lucide-react";
 import Link from "next/link";
-import { getAccountProfile } from "@/utils/auth"; // pastikan path-nya sesuai
+import { getAccountProfile } from "@/utils/auth";
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);

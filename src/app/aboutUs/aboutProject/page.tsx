@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Cpu, BrainCircuit, Touchpad, Battery, Monitor, ChevronRight, Recycle } from 'lucide-react';
+import { Cpu, BrainCircuit, Touchpad, Battery, Monitor, ChevronRight } from 'lucide-react';
 
 export default function TentangProject() {
   const features = [

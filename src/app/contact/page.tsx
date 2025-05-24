@@ -16,7 +16,6 @@ export default function Kontak() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Validation functions
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
@@ -29,7 +28,6 @@ export default function Kontak() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Validate all fields
     if (!form.name || !form.phone || !form.email || !form.message) {
       setError('Mohon isi semua bidang dengan benar.');
       setIsLoading(false);
@@ -55,7 +53,6 @@ export default function Kontak() {
       setForm({ name: '', phone: '', email: '', message: '' });
       setIsLoading(false);
       
-      // Hide success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
     }, 1500);
   };
@@ -124,7 +121,6 @@ export default function Kontak() {
         {/* Decorative elements */}
         <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-green-100/30 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-blue-100/30 blur-3xl" />
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -163,20 +159,20 @@ export default function Kontak() {
                     {
                       icon: <Mail className="w-6 h-6 text-green-500" />,
                       title: "Email",
-                      content: "info@trashinno.com",
+                      content: "team@trashinno.my.id",
                       subtitle: "Respon dalam 24 jam"
                     },
                     {
                       icon: <Phone className="w-6 h-6 text-green-500" />,
                       title: "Telepon",
-                      content: "+62 812 3456 7890",
-                      subtitle: "Senin-Jumat, 09:00-17:00"
+                      content: "+62 858 527 792 03",
+                      subtitle: "Senin-Jumat, 07:00-15:00"
                     },
                     {
                       icon: <MapPin className="w-6 h-6 text-green-500" />,
                       title: "Kantor",
-                      content: "Jl. Bersih No. 10, Eco City, Indonesia",
-                      subtitle: "Buka dengan appointment"
+                      content: "JL. Raya Sidoarjo No. 123, Sidoarjo",
+                      subtitle: "Kunjungi kami dengan janji"
                     }
                   ].map((item, i) => (
                     <motion.li 
@@ -213,8 +209,7 @@ export default function Kontak() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-full border-0"
-                    title="Lokasi Trashinno"
-                  />
+                    title="Lokasi Trashinno"/>
                 </div>
                 <p className="text-sm text-gray-500 mt-3 text-center">
                   Kunjungi kantor kami dengan membuat janji terlebih dahulu
@@ -277,8 +272,7 @@ export default function Kontak() {
                       onChange={handleChange}
                       placeholder="Masukkan nama lengkap"
                       className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                      required
-                    />
+                      required/>
                   </motion.div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -293,8 +287,7 @@ export default function Kontak() {
                         onChange={handleChange}
                         placeholder="081234567890"
                         className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                        required
-                      />
+                        required/>
                     </motion.div>
 
                     <motion.div
