@@ -30,7 +30,7 @@ export default function DashboardPage() {
     if (error) {
       console.error('Error fetching users:', error);
     } else {
-      console.log('Fetched users:', data); // Cek semua data muncul
+      console.log('Fetched users:', data); 
       setUsers(data || []);
     }
   };
@@ -106,7 +106,7 @@ export default function DashboardPage() {
           <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="text-xl font-bold text-zinc-800 mb-4">Live IoT Data</h2>
             {!iotData ? (
-              <p className="text-gray-500">Klik tombol "Ambil Data dari IoT" untuk melihat data terbaru.</p>
+              <p className="text-gray-500">Klik tombol Ambil Data dari IoT untuk melihat data terbaru.</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(iotData).map(([key, value]) => (
